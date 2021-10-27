@@ -1,0 +1,461 @@
+{
+    "schema": {
+        "options": {},
+        "crud_objects": {
+            "students":{
+                "operations":{
+                    "students_get":{
+                        "method":"get",
+                        "call": {
+                            "path": "/ws/v1/district/student"
+                        },
+                        "processing_options": {
+                            "output_field": "students.student"
+                        },
+                        "query_parameters": {
+								"q": "name.last_name==*;school_enrollment.enroll_status_code==(0)"
+                        }
+                    },
+                    "student_update": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/student"
+                        },
+                        "body":{
+                            "students":{
+                                "student":{
+                                    "_nim_mode_":"merge",
+                                    "client_uid":"NIM",
+                                    "action":"UPDATE"
+                                }
+                            }
+                        },
+                        "semantics": "update"
+                    }
+                },
+                "parameters":{},
+                "key":"id",
+                "resources":{
+                    "id": "number*",
+                    "local_id": "string*",
+                    "student_username": "string",
+                    "addresses":{
+                        "mailing":{
+                            "city":"_:string*",
+                            "street":"_:string*",
+                            "state_province":"_:string*"
+                        },
+                        "physical":{
+                            "city":"_:string*",
+                            "grid_location":"_:string*",
+                            "postal_code":"_:number*",
+                            "street":"_:string*",
+                            "state_province":"_:string"
+                        }
+                    },
+                    "alerts":{
+                        "discipline":{
+                            "description":"_:string",
+                            "expires_date":"_:string"
+                        },
+                        "legal":{
+                            "description":"_:string",
+                            "expires_date":"_:string"
+                        },
+                        "medical":{
+                            "description":"_:string",
+                            "expires_date":"_:string"
+                        }
+                    },
+                    "contact":{
+                        "doctor_name":"_:string",
+                        "emergency_contact_name1":"_:string",
+                        "emergency_contact_name2":"_:string",
+                        "emergency_phone1":"_:string",
+                        "emergency_phone2":"_:string",
+                        "father":"_:string",
+                        "guardian_email":"_:string",
+                        "mother":"_:string"
+                    },
+                    "contact_info":{
+                        "email":"_:string"
+                    },
+                    "demographics":{
+                        "birth_date":"_:string*",
+                        "gender":"_:string*",
+                        "projected_graduation_year":"_:number*"
+                    },
+                    "ethnicity_race":{
+                       "scheduling_reporting_ethnicity":"_:string"
+                    },
+                    "fees":"string",
+                    "initial_enrollment":{
+                        "district_entry_grade_level":"_:number",
+                        "school_entry_grade_level":"_:number"
+                    },
+                    "lunch":{
+                        "balance_1":"_:string",
+                        "balance_2":"_:string",
+                        "balance_3":"_:string",
+                        "balance_4":"_:string",
+                        "last_meal":"_:string",
+                        "lunch_id":"_:number"
+                    },
+                    "name": {
+                        "first_name": "string*",
+                        "last_name": "string*"
+                    },
+                    "phones":{
+                        "main":{
+                            "number":"_:string*"
+                        }
+                    },
+                    "schedule_setup":{
+                        "home_room":"_:string",
+                        "next_school":"_:number",
+                        "sched_next_year_grade":"_:number"
+                    },
+                    "school_enrollment":{
+                        "enroll_status":"_:string",
+                        "enroll_status_code":"_:number",
+                        "enroll_status_description":"_:string",
+                        "entry_code":"_:string",
+                        "entry_comment":"_:string",
+                        "entry_date":"_:string",
+                        "exit_code":"_:string",
+                        "exit_comment":"_:string",
+                        "exit_date":"_:string",
+                        "full_time_equivalency":{
+                            "fteid":"_:number",
+                            "name":"_:string"
+                        },
+                        "grade_level":"_:number",
+                        "school_id":"_:number",
+                        "school_number":"_:number"
+                    }
+                }
+            },
+            "schools":{
+                "operations":{
+                    "schools_get":{
+                        "method":"get",
+                        "call": {
+                            "path": "/ws/v1/district/school"
+                        },
+                        "processing_options": {
+                            "output_field": "schools.school"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters":{},
+                "key":"id",
+                "resources":{
+                    "id": "number*",
+                    "name": "string*",
+                    "school_number": "string*",
+                    "state_province_id": "string*",
+                    "low_grade": "string",
+                    "high_grade": "string",
+                    "alternate_school_number": "string*",
+                    "addresses":{
+                        "physical":{
+                            "city":"string",
+                            "postal_code":"number",
+                            "street":"string",
+                            "state_province":"string"
+                        }
+                    },
+                    "assistant_principal": {
+                        "name":{
+                            "first_name": "string",
+                            "middle_name": "string",
+                            "last_name": "string"
+                        },
+                        "email": "string"
+                    },
+                    "full_time_equivalencies": {
+                        "full_time_equivalency": {
+                            "fteid": "number",
+                            "name": "string",
+                            "start_year": "number",
+                            "grade_level": "string"
+                        }
+                    },
+                    "principal": {
+                        "name":{
+                            "first_name": "string",
+                            "middle_name": "string",
+                            "last_name": "string"
+                        },
+                        "email": "string"
+                    },
+                    "school_boundary": {
+                        "points": {
+                            "point": "string"
+                        }
+                    },
+                    "school_fees_setup": {
+                        "exemption_status": "number",
+                        "fee_types": {
+                            "fee_type": "number",
+                            "name": "string",
+                            "description": "string",
+                            "category": "string",
+                            "priority_order": "number",
+                            "creation_date": "string"
+                        },
+                        "school_fees": {
+                            "school_fee": {
+                                "id": "number",
+                                "amount": "string",
+                                "description": "string",
+                                "department": "string",
+                                "department_id": "number",
+                                "proratable": "number",
+                                "start_year": "number",
+                                "creation_date": "string",
+                                "modified_date": "string",
+                                "applicable_date": "string"
+                            },
+                            "fte_type": {
+                                "id": "number",
+                                "name": "string",
+                                "description": "string",
+                                "category": "string",
+                                "priority_order": "number"
+                            }
+                        }
+                    }
+                    
+
+                }
+            },
+            "staff":{
+                "operations":{
+                    "staffs_get":{
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "id",
+                            "path": "/ws/v1/school/{iterator}/staff",
+                            "base": {
+                                "school_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": "staffs.staff"
+                        },
+                        "maxSessionCount": 20
+
+                    }
+                },
+                "parameters":{},
+                "key":"id",
+                "resources":{
+                    "id": "number*",
+                    "local_id": "string*",
+                    "admin_username": "string",
+					"teacher_username": "string",
+					"teacher_global_id": "string*",
+					"staff_global_id": "string*",
+                    "addresses":{
+                        "home":{
+                            "city":"string",
+                            "street":"string",
+                            "state_province":"string",
+							"postal_code":"number"
+                        }
+                    },
+                    "name": {
+                        "first_name": "string*",
+                        "last_name": "string*",
+						"middle_name": "string*"
+                    },
+                    "phones":{
+                        "home_phone":"string"
+                    },
+                    "school_affiliations": {
+                        "school_affiliation": {
+                            "school_id": "number*",
+                            "type": "number*",
+                            "status": "number*"
+                        }
+                    }
+                    
+                }
+            },
+            "sections":{
+                "operations":{
+                    "sections_get":{
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "id",
+                            "path": "/ws/v1/school/{iterator}/section",
+                            "base": {
+                                "school_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": "sections.section"
+                        },
+                        "maxSessionCount": 20
+
+                    }
+                },
+                "parameters":{},
+                "key":"id",
+                "resources":{
+                    "id": "number*",
+                    "school_id": "number*",
+                    "course_id": "number*",
+                    "term": {
+                        "term_id": "number*"
+                    },
+                    "section_number": "string*",
+                    "expression": "string*",
+                    "staff_id": "string*"
+                }
+            },
+            "courses":{
+                "operations":{
+                    "courses_get":{
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "id",
+                            "path": "/ws/v1/school/{iterator}/course",
+                            "base": {
+                                "school_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": "courses.course"
+                        },
+                        "maxSessionCount": 20
+
+                    }
+                },
+                "parameters":{},
+                "key":"id",
+                "resources":{
+                    "id": "number*",
+                    "course_number": "string*",
+                    "course_name": "string*"
+                }
+            },
+            "terms":{
+                "operations":{
+                    "terms_get":{
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "id",
+                            "path": "/ws/v1/school/{iterator}/term",
+                            "base": {
+                                "school_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": "terms.term"
+                        },
+                        "maxSessionCount": 20
+
+                    }
+                },
+                "parameters":{},
+                "key":"id",
+                "resources":{
+                    "id": "number*",
+                    "school_id": "number*",
+                    "start_year": "number*",
+                    "portion": "number*",
+                    "start_date": "string*",
+                    "end_date": "string*",
+                    "abbreviation": "string",
+                    "name": "string*"
+                }
+            },
+            "enrollments":{
+                "operations":{
+                    "enrollments_get":{
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "sections",
+                            "iterator": "id",
+                            "path": "/ws/v1/section/{iterator}/section_enrollment",
+                            "base": {
+                                "section_id": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": "section_enrollments.section_enrollment"
+                        },
+                        "maxSessionCount": 20
+
+                    }
+                },
+                "parameters":{},
+                "key":"id",
+                "resources":{
+                    "id": "number*",
+                    "section_id": "number*",
+                    "student_id": "number*",
+                    "entry_date": "string*",
+                    "exit_date": "string*",
+                    "dropped": "boolean*"
+                }
+            }
+        }
+		
+	},
+    "rest": {
+        "config": {
+            "baseUrl": "https://{tenant_id}",
+            "get": {
+                "maxPageCount": 500,
+                "query_parameters": {
+                },
+                "pagination":{
+                    "mode":"generic",
+                    "path":[],
+                    "params":{
+                        "page":"{page_number}",
+                        "pagesize":1000
+                    }
+                },
+                "selector":{
+                    "mode":"objects",
+                    "parameter":"expansions"
+                }
+            },
+            "authentication": "client_credentials",
+            "call_handling": "generic",
+            "test_connection": {
+                "url": "/ws/v1/district/student/count"
+            }
+        },
+        "authOptions": {
+            "authUrl": "https://{tenant_id}/oauth/access_token",
+            "directToken":true
+        }
+    },
+    "connection":{
+        "items": [
+            {
+                "name": "page_size",
+                "type": "textbox",
+                "label": "Page Size:",
+                "value": "1000"
+            }
+        ]
+    }
+}
