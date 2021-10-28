@@ -13,7 +13,8 @@
                             "output_field": "students.student"
                         },
                         "query_parameters": {
-								"q": "name.last_name==*;school_enrollment.enroll_status_code==(0)"
+								"q": "{student_filter}",
+                                "extensions": "{student_extensions}"
                         }
                     },
                     "student_update": {
@@ -39,18 +40,21 @@
                 "resources":{
                     "id": "number*",
                     "local_id": "string*",
-                    "student_username": "string",
+                    "student_username": "string*",
+                    "state_province_id": "number*",
                     "addresses":{
                         "mailing":{
-                            "city":"_:string*",
-                            "street":"_:string*",
-                            "state_province":"_:string*"
+                            "city":"_:string",
+                            "street":"_:string",
+                            "state_province":"_:string",
+                            "postal_code":"_:string",
+                            "grid_location":"_:string"
                         },
                         "physical":{
-                            "city":"_:string*",
-                            "grid_location":"_:string*",
-                            "postal_code":"_:number*",
-                            "street":"_:string*",
+                            "city":"_:string",
+                            "grid_location":"_:string",
+                            "postal_code":"_:number",
+                            "street":"_:string",
                             "state_province":"_:string"
                         }
                     },
@@ -89,7 +93,52 @@
                     "ethnicity_race":{
                        "scheduling_reporting_ethnicity":"_:string"
                     },
-                    "fees":"string",
+                    "fees":{
+                        "fee":[{
+                            "category_name":"_:string",
+                            "date_created":"_:string",
+                            "fee_amount":"_:string",
+                            "fee_balance":"_:string",
+                            "fee_description":"_:string",
+                            "fee_paid":"_:string",
+                            "fee_transaction": {
+                                "date":"_:string",
+                                "description":"_:string",
+                                "global_net_balance":"_:string",
+                                "group_transaction_id":"_:number",
+                                "id":"_:number",
+                                "payment_method":"_:string",
+                                "school_id":"_:number",
+                                "start_year":"_:number",
+                                "starting_balance":"_:string",
+                                "student_id":"_:number",
+                                "transaction_amount":"_:string",
+                                "transaction_type":"_:string"
+                            },
+                            "group_transaction_id":"_:string",
+                            "id":"_:string",
+                            "priority":"_:string",
+                            "pro_ratable_indicator":"_:string",
+                            "school_id":"_:number",
+                            "start_year":"_:number",
+                            "student_id":"_:number",
+                            "term_id":"_:number",
+                            "transaction_date":"_:string",
+                            "type_id":"_:number",
+                            "type_name":"_:string"
+                        }],
+                        "fee_balance": [{
+                            "balance":"_:string",
+                            "credit":"_:string",
+                            "debit":"_:string",
+                            "fee_exemption_status":"_:string",
+                            "fee_exemption_status_code":"_:number",
+                            "id":"_:number",
+                            "school_id":"_:number",
+                            "student_id":"_:number",
+                            "year_id":"_:number"
+                        }]
+                    },
                     "initial_enrollment":{
                         "district_entry_grade_level":"_:number",
                         "school_entry_grade_level":"_:number"
@@ -117,22 +166,34 @@
                         "sched_next_year_grade":"_:number"
                     },
                     "school_enrollment":{
-                        "enroll_status":"_:string",
-                        "enroll_status_code":"_:number",
-                        "enroll_status_description":"_:string",
+                        "enroll_status":"_:string*",
+                        "enroll_status_code":"_:number*",
+                        "enroll_status_description":"_:string*",
                         "entry_code":"_:string",
                         "entry_comment":"_:string",
-                        "entry_date":"_:string",
+                        "entry_date":"_:string*",
                         "exit_code":"_:string",
                         "exit_comment":"_:string",
-                        "exit_date":"_:string",
+                        "exit_date":"_:string*",
                         "full_time_equivalency":{
                             "fteid":"_:number",
                             "name":"_:string"
                         },
-                        "grade_level":"_:number",
-                        "school_id":"_:number",
-                        "school_number":"_:number"
+                        "grade_level":"_:number*",
+                        "school_id":"_:number*",
+                        "school_number":"_:number",
+                        "track": "_:string"
+                    },
+                    "_extension_data": {
+                        "_table_extension": [{
+                          "name": "string*",
+                          "recordFound": "string*",
+                           "_field": [{
+                              "name": "string*",
+                              "type": "string*",
+                              "value": "string*"
+                          }]
+                        }]
                     }
                 }
             },
@@ -141,7 +202,9 @@
                     "schools_get":{
                         "method":"get",
                         "call": {
-                            "path": "/ws/v1/district/school"
+                            "mode":"normal",
+                            "path": "/ws/v1/district/school",
+                            "post_processing": "child_tables"
                         },
                         "processing_options": {
                             "output_field": "schools.school"
@@ -162,10 +225,10 @@
                     "alternate_school_number": "string*",
                     "addresses":{
                         "physical":{
-                            "city":"string",
-                            "postal_code":"number",
-                            "street":"string",
-                            "state_province":"string"
+                            "city":"_:string",
+                            "postal_code":"_:number",
+                            "street":"_:string",
+                            "state_province":"_:string"
                         }
                     },
                     "assistant_principal": {
@@ -178,17 +241,17 @@
                     },
                     "full_time_equivalencies": {
                         "full_time_equivalency": {
-                            "fteid": "number",
-                            "name": "string",
-                            "start_year": "number",
-                            "grade_level": "string"
+                            "fteid": "_:number",
+                            "name": "_:string",
+                            "start_year": "_:number",
+                            "grade_level": "_:string"
                         }
                     },
                     "principal": {
                         "name":{
-                            "first_name": "string",
-                            "middle_name": "string",
-                            "last_name": "string"
+                            "first_name": "_:string",
+                            "middle_name": "_:string",
+                            "last_name": "_:string"
                         },
                         "email": "string"
                     },
@@ -200,32 +263,32 @@
                     "school_fees_setup": {
                         "exemption_status": "number",
                         "fee_types": {
-                            "fee_type": "number",
-                            "name": "string",
-                            "description": "string",
-                            "category": "string",
-                            "priority_order": "number",
-                            "creation_date": "string"
+                            "fee_type": "_:number",
+                            "name": "_:string",
+                            "description": "_:string",
+                            "category": "_:string",
+                            "priority_order": "_:number",
+                            "creation_date": "_:string"
                         },
                         "school_fees": {
                             "school_fee": {
-                                "id": "number",
-                                "amount": "string",
-                                "description": "string",
-                                "department": "string",
-                                "department_id": "number",
-                                "proratable": "number",
-                                "start_year": "number",
-                                "creation_date": "string",
-                                "modified_date": "string",
-                                "applicable_date": "string"
+                                "id": "_:number",
+                                "amount": "_:string",
+                                "description": "_:string",
+                                "department": "_:string",
+                                "department_id": "_:number",
+                                "proratable": "_:number",
+                                "start_year": "_:number",
+                                "creation_date": "_:string",
+                                "modified_date": "_:string",
+                                "applicable_date": "_:string"
                             },
                             "fte_type": {
-                                "id": "number",
-                                "name": "string",
-                                "description": "string",
-                                "category": "string",
-                                "priority_order": "number"
+                                "id": "_:number",
+                                "name": "_:string",
+                                "description": "_:string",
+                                "category": "_:string",
+                                "priority_order": "_:number"
                             }
                         }
                     }
@@ -249,8 +312,10 @@
                         "processing_options": {
                             "output_field": "staffs.staff"
                         },
+                        "query_parameters": {
+                                
+                        },
                         "maxSessionCount": 20
-
                     }
                 },
                 "parameters":{},
@@ -258,34 +323,72 @@
                 "resources":{
                     "id": "number*",
                     "local_id": "string*",
+                    "users_dcid": "string*",
                     "admin_username": "string",
-					"teacher_username": "string",
-					"teacher_global_id": "string*",
-					"staff_global_id": "string*",
+                    "teacher_username": "string",
+                    "teacher_global_id": "string*",
+                    "staff_global_id": "string*",
+                    "emails": {
+                        "work_email": "_:string*",
+                        "home_email": "_:string*"
+                    },
                     "addresses":{
                         "home":{
-                            "city":"string",
-                            "street":"string",
-                            "state_province":"string",
-							"postal_code":"number"
+                            "city":"_:string",
+                            "street":"_:string",
+                            "state_province":"_:string",
+                            "postal_code":"_:number"
                         }
                     },
                     "name": {
-                        "first_name": "string*",
-                        "last_name": "string*",
-						"middle_name": "string*"
+                        "first_name": "_:string*",
+                        "last_name": "_:string*",
+                        "middle_name": "_:string*"
                     },
                     "phones":{
-                        "home_phone":"string"
+                        "home_phone":"_:string"
                     },
                     "school_affiliations": {
                         "school_affiliation": {
-                            "school_id": "number*",
-                            "type": "number*",
-                            "status": "number*"
+                            "school_id": "_:number*",
+                            "type": "_:number*",
+                            "status": "_:number*"
                         }
                     }
-                    
+                }
+            },
+            "enrollments":{
+                "operations":{
+                    "enrollments_get":{
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "sections",
+                            "iterator": "id",
+                            "path": "/ws/v1/section/{iterator}/section_enrollment",
+                            "base": {
+                                "section_id": "{iterator}"
+                            },
+                            "post_processing": "child_tables"
+                        },
+                        "processing_options": {
+                            "output_field": "section_enrollments.section_enrollment"
+                        },                        
+                        "maxPageCount": -1,
+                        "maxSessionCount": 10,
+                        "query_parameters": {}
+
+                    }
+                },
+                "parameters":{},
+                "key":"id",
+                "resources":{
+                    "id": "number*",
+                    "section_id": "number*",
+                    "student_id": "number*",
+                    "entry_date": "string*",
+                    "exit_date": "string*",
+                    "dropped": "boolean*"
                 }
             },
             "sections":{
@@ -297,6 +400,7 @@
                             "table": "schools",
                             "iterator": "id",
                             "path": "/ws/v1/school/{iterator}/section",
+                            "post_processing": "child_tables",
                             "base": {
                                 "school_id": "{iterator}"
                             }
@@ -315,7 +419,7 @@
                     "school_id": "number*",
                     "course_id": "number*",
                     "term": {
-                        "term_id": "number*"
+                        "term_id": "_:number*"
                     },
                     "section_number": "string*",
                     "expression": "string*",
@@ -383,35 +487,46 @@
                     "name": "string*"
                 }
             },
-            "enrollments":{
+            "contacts":{
                 "operations":{
-                    "enrollments_get":{
+                    "contacts_get":{
                         "method": "get",
                         "call": {
-                            "mode": "iteration",
-                            "table": "sections",
-                            "iterator": "id",
-                            "path": "/ws/v1/section/{iterator}/section_enrollment",
-                            "base": {
-                                "section_id": "{iterator}"
-                            }
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.students.listallcontacts"
                         },
+                        "body":{ },
                         "processing_options": {
-                            "output_field": "section_enrollments.section_enrollment"
+                            "output_field": "record"
                         },
-                        "maxSessionCount": 20
-
+                        "query_parameters": {
+                        }
                     }
                 },
                 "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
-                    "section_id": "number*",
-                    "student_id": "number*",
-                    "entry_date": "string*",
-                    "exit_date": "string*",
-                    "dropped": "boolean*"
+                    "name": "string",
+                    "tables": {
+                        "students": {
+                            "contact_firstname": "_:string*",
+                            "contact_isactive": "_:boolean*",
+                            "contact_lastname": "_:string*",
+                            "dcid": "_:number*",
+                            "emailaddress": "_:string*",
+                            "iscustodial": "_:boolean*",
+                            "isemergency": "_:boolean*",
+                            "livewith": "_:boolean*",
+                            "person_isactive": "_:boolean*",
+                            "receivesmail": "_:boolean*",
+                            "relationship": "_:string*",
+                            "schoolpickup": "_:boolean",
+                            "student_firstname": "_:string",
+                            "student_lastname": "_:string",
+                            "student_number": "_:number"
+                        }
+                    }
                 }
             }
         }
@@ -421,7 +536,7 @@
         "config": {
             "baseUrl": "https://{tenant_id}",
             "get": {
-                "maxPageCount": 500,
+                "maxPageCount": 5,
                 "query_parameters": {
                 },
                 "pagination":{
@@ -429,7 +544,7 @@
                     "path":[],
                     "params":{
                         "page":"{page_number}",
-                        "pagesize":1000
+                        "pagesize":100
                     }
                 },
                 "selector":{
@@ -454,7 +569,25 @@
                 "name": "page_size",
                 "type": "textbox",
                 "label": "Page Size:",
-                "value": "1000"
+                "value": "100"
+            },
+            {
+                "name": "student_filter",
+                "type": "textbox",
+                "label": "Student Filter:",
+                "value": "name.last_name==*;school_enrollment.enroll_status_code==(0)"
+            },
+            {
+                "name": "student_extensions",
+                "type": "textbox",
+                "label": "Student Extensions",
+                "value": "u_students_extension,studentcorefields"
+            },
+            {
+                "name": "staff_extensions",
+                "type": "textbox",
+                "label": "Staff Extensions",
+                "value": ""
             }
         ]
     }
