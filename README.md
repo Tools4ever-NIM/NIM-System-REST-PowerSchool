@@ -9,5 +9,9 @@ NIM Connector for PowerSchool SIS
 - Click Install. A confirmation message appears. The plugin appears in the Installed Plugins section on the Plugin Management Dashboard page.
 - Retrieve Client ID and Secret
 
+# Known Issues
+- Extension Data does not load properly
+- Fees Data does not load properly
+
 # NIM Docs
 The official NIM documentation can be found at: https://docs.nimsuite.com
