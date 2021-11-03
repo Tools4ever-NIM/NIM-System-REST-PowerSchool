@@ -14,7 +14,8 @@
                         },
                         "query_parameters": {
 								"q": "{student_filter}",
-                                "extensions": "{student_extensions}"
+                                "extensions": "{student_extensions}",
+                                "expansions": "{student_expansions}"
                         }
                     },
                     "student_update": {
@@ -187,11 +188,11 @@
                     "_extension_data": {
                         "_table_extension": [{
                           "name": "string*",
-                          "recordFound": "string*",
+                          "recordFound": "string",
                            "_field": [{
-                              "name": "string*",
-                              "type": "string*",
-                              "value": "string*"
+                              "name": "_:string*",
+                              "type": "_:string*",
+                              "value": "_:string*"
                           }]
                         }]
                     }
@@ -491,6 +492,7 @@
                 "operations":{
                     "contacts_get":{
                         "method": "get",
+                        "verb": "post",
                         "call": {
                             "mode": "normal",
                             "path": "/ws/schema/query/com.tools4ever.students.listallcontacts"
@@ -546,10 +548,6 @@
                         "page":"{page_number}",
                         "pagesize":100
                     }
-                },
-                "selector":{
-                    "mode":"objects",
-                    "parameter":"expansions"
                 }
             },
             "authentication": "client_credentials",
@@ -576,6 +574,12 @@
                 "type": "textbox",
                 "label": "Student Filter:",
                 "value": "name.last_name==*;school_enrollment.enroll_status_code==(0)"
+            },
+            {
+                "name": "student_expansions",
+                "type": "textbox",
+                "label": "Student Expansions",
+                "value": "addresses,alerts,contact,contact_info,demographics,ethnicity_race,initial_enrollment,lunch,name,phones,schedule_setup,school_enrollment"
             },
             {
                 "name": "student_extensions",
