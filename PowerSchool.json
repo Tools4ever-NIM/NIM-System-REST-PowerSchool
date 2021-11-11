@@ -544,7 +544,7 @@
                     "path":[],
                     "params":{
                         "page":"{page_number}",
-                        "pagesize":100
+                        "pagesize":"{page_size}"
                     }
                 }
             },
