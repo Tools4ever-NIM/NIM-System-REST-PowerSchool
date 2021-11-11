@@ -419,9 +419,7 @@
                     "id": "number*",
                     "school_id": "number*",
                     "course_id": "number*",
-                    "term": {
-                        "term_id": "_:number*"
-                    },
+                    "term_id": "number*",
                     "section_number": "string*",
                     "expression": "string*",
                     "staff_id": "string*"
@@ -495,7 +493,7 @@
                         "verb": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/ws/schema/query/com.tools4ever.students.listallcontacts"
+                            "path": "/ws/schema/query/com.tools4ever.students.contacts.listall"
                         },
                         "body":{ },
                         "processing_options": {
