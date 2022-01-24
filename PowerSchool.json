@@ -87,7 +87,7 @@
                         "email":"_:string"
                     },
                     "demographics":{
-                        "birth_date":"_:string*",
+                        "birth_date":"_:date*",
                         "gender":"_:string*",
                         "projected_graduation_year":"_:number*"
                     },
@@ -154,7 +154,8 @@
                     },
                     "name": {
                         "first_name": "string*",
-                        "last_name": "string*"
+                        "last_name": "string*",
+						"middle_name": "string*"
                     },
                     "phones":{
                         "main":{
@@ -172,10 +173,10 @@
                         "enroll_status_description":"_:string*",
                         "entry_code":"_:string",
                         "entry_comment":"_:string",
-                        "entry_date":"_:string*",
+                        "entry_date":"_:date*",
                         "exit_code":"_:string",
                         "exit_comment":"_:string",
-                        "exit_date":"_:string*",
+                        "exit_date":"_:date*",
                         "full_time_equivalency":{
                             "fteid":"_:number",
                             "name":"_:string"
@@ -387,8 +388,8 @@
                     "id": "number*",
                     "section_id": "number*",
                     "student_id": "number*",
-                    "entry_date": "string*",
-                    "exit_date": "string*",
+                    "entry_date": "date*",
+                    "exit_date": "date*",
                     "dropped": "boolean*"
                 }
             },
@@ -480,8 +481,8 @@
                     "school_id": "number*",
                     "start_year": "number*",
                     "portion": "number*",
-                    "start_date": "string*",
-                    "end_date": "string*",
+                    "start_date": "date*",
+                    "end_date": "date*",
                     "abbreviation": "string",
                     "name": "string*"
                 }
@@ -513,6 +514,7 @@
                             "contact_firstname": "_:string*",
                             "contact_isactive": "_:boolean*",
                             "contact_lastname": "_:string*",
+							"contactpriorityorder": "_:string*",
                             "dcid": "_:number*",
                             "emailaddress": "_:string*",
                             "iscustodial": "_:boolean*",
