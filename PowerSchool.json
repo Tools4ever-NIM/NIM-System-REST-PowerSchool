@@ -516,8 +516,7 @@
                             "schoolpickup": "_:boolean",
                             "student_firstname": "_:string",
                             "student_lastname": "_:string",
-                            "student_number": "_:number"
-							"contactpriorityorder": "_:number*"								   
+                            "student_number": "_:number"					   
                         }
                     }
                 }
