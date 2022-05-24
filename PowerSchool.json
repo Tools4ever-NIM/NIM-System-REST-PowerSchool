@@ -186,17 +186,7 @@
                         "school_number":"_:number",
                         "track": "_:string"
                     },
-                    "_extension_data": {
-                        "_table_extension": [{
-                          "name": "string*",
-                          "recordFound": "string",
-                           "_field": [{
-                              "name": "_:string*",
-                              "type": "_:string*",
-                              "value": "_:string*"
-                          }]
-                        }]
-                    }
+                    "_extension_data": "powerschool_extension_table*"
                 }
             },
             "schools":{
@@ -526,7 +516,7 @@
                             "schoolpickup": "_:boolean",
                             "student_firstname": "_:string",
                             "student_lastname": "_:string",
-                            "student_number": "_:number"
+                            "student_number": "_:number"					   
                         }
                     }
                 }
