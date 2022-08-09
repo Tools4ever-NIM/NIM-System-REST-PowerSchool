@@ -305,7 +305,7 @@
                             "output_field": "staffs.staff"
                         },
                         "query_parameters": {
-                                
+                            "extensions": "{staff_extensions}"
                         },
                         "maxSessionCount": 20
                     }
@@ -346,7 +346,8 @@
                             "type": "_:number*",
                             "status": "_:number*"
                         }
-                    }
+                    },
+                    "_extension_data": "powerschool_extension_table*"
                 }
             },
             "enrollments":{
