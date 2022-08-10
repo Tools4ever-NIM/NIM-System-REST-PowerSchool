@@ -10,7 +10,6 @@ NIM Connector for PowerSchool SIS
 - Retrieve Client ID and Secret
 
 # Known Issues
-- Extension Data does not load properly
 - Fees Data does not load properly
 
 # NIM Docs
