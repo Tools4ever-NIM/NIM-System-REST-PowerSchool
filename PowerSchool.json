@@ -305,6 +305,7 @@
                             "output_field": "staffs.staff"
                         },
                         "query_parameters": {
+                            "expansions": "{staff_expansions}",
                             "extensions": "{staff_extensions}"
                         },
                         "maxSessionCount": 20
@@ -577,6 +578,12 @@
                 "type": "textbox",
                 "label": "Student Extensions",
                 "value": "u_students_extension,studentcorefields"
+            },
+            {
+                "name": "staff_expansions",
+                "type": "textbox",
+                "label": "Staff Expansions",
+                "value": "addresses,emails,phones,school_affiliations,school_counselors,teacher_global_id,staff_global_id"
             },
             {
                 "name": "staff_extensions",
