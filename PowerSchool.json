@@ -589,7 +589,7 @@
                 "name": "staff_extensions",
                 "type": "textbox",
                 "label": "Staff Extensions",
-                "value": ""
+                "value": "s_ssf_ncea_x"
             }
         ]
     }
