@@ -13,7 +13,7 @@
                             "output_field": "students.student"
                         },
                         "query_parameters": {
-								"q": "{student_filter}",
+                                "q": "{student_filter}",
                                 "extensions": "{student_extensions}",
                                 "expansions": "{student_expansions}"
                         }
@@ -22,14 +22,15 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/student"
+                            "path": "/ws/v1/student"
                         },
                         "body":{
                             "students":{
                                 "student":{
-                                    "_nim_mode_":"merge",
                                     "client_uid":"NIM",
-                                    "action":"UPDATE"
+				    "id":"{id}",
+                                    "action":"UPDATE",
+				    "_nim_merge_attributes_": true
                                 }
                             }
                         },
