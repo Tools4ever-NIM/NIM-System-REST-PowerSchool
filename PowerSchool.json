@@ -547,7 +547,21 @@
             "call_handling": "generic",
             "test_connection": {
                 "url": "/ws/v1/district/student/count"
-            }
+            },
+			"retry": [
+                {
+                    "type": "statusCode",
+                    "statusCode": 504,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 10,
+                        "waitTime": 5
+                    }
+                },
+                {
+                    "type": "connectionError"
+                }
+            ]
         },
         "authOptions": {
             "authUrl": "https://{tenant_id}/oauth/access_token",
