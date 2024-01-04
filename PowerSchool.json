@@ -2,6 +2,48 @@
     "schema": {
         "options": {},
         "crud_objects": {
+            "config_students":{
+                "operations":{
+                    "config_students_get":{
+                        "method":"get",
+                        "call": {
+                            "path": "/ws/v1/district/student"
+                        },
+                        "processing_options": {
+                            "output_field": "students"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters":{},
+                "key":"@extensions",
+                "resources":{
+                    "@extensions": "number*",
+                    "@expansions": "string*"
+                }
+            },
+            "config_staff":{
+                "operations":{
+                    "config_staff_get":{
+                        "method":"get",
+                        "call": {
+                            "path": "/ws/v1/school/0/staff"
+                        },
+                        "processing_options": {
+                            "output_field": "staffs"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters":{},
+                "key":"@extensions",
+                "resources":{
+                    "@extensions": "number*",
+                    "@expansions": "string*"
+                }
+            },
             "students":{
                 "operations":{
                     "students_get":{
