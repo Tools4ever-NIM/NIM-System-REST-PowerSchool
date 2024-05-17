@@ -612,6 +612,35 @@
                         }
                     }
                 }
+            },
+            "teachers_status": {
+                "operations": {
+                    "teachers_status_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.teachers.data.listTeacherStatus"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "teachers": {
+                                        "id": "_:string*",
+                                        "teachernumber": "_:string*",
+                                        "status": "_:string*"
+                        }
+                    }
+                }
             }
         }
 		
