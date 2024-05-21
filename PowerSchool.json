@@ -641,6 +641,233 @@
                         }
                     }
                 }
+            },
+            "powerquery_students_contacts":{
+                "operations":{
+                    "powerquery_students_contacts_get":{
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.students.contacts.listall"
+                        },
+                        "body":{ },
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {
+                        }
+                    }
+                },
+                "parameters":{},
+                "key":"id",
+                "resources":{
+                    "id": "number*",
+                    "name": "string",
+                    "tables": {
+                        "students": {
+                            "contact_firstname": "_:string*",
+                            "contact_isactive": "_:boolean*",
+                            "contact_lastname": "_:string*",
+							"contactpriorityorder": "_:string*",
+                            "dcid": "_:number*",
+                            "emailaddress": "_:string*",
+                            "iscustodial": "_:boolean*",
+                            "isemergency": "_:boolean*",
+                            "livewith": "_:boolean*",
+                            "person_isactive": "_:boolean*",
+                            "receivesmail": "_:boolean*",
+                            "relationship": "_:string*",
+                            "schoolpickup": "_:boolean",
+                            "student_firstname": "_:string",
+                            "student_lastname": "_:string",
+                            "student_number": "_:number"					   
+                        }
+                    }
+                }
+            },
+			"powerquery_students_listallwithAddress": {
+                "operations": {
+                    "contacts_w_addresses_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.students.contacts.listallwithaddress"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "id": "number*",
+                    "name": "string",
+                    "tables": {
+                        "students": {
+                            "contact_firstname": "_:string*",
+                            "contact_isactive": "_:boolean*",
+                            "contact_lastname": "_:string*",
+                            "contactpriorityorder": "_:string*",
+                            "dcid": "_:number*",
+                            "emailaddress": "_:string*",
+                            "iscustodial": "_:boolean*",
+                            "isemergency": "_:boolean*",
+                            "livewith": "_:boolean*",
+                            "person_isactive": "_:boolean*",
+                            "receivesmail": "_:boolean*",
+                            "relationship": "_:string*",
+                            "schoolpickup": "_:boolean",
+                            "student_firstname": "_:string",
+                            "student_lastname": "_:string",
+                            "student_number": "_:number",
+                            "street": "_:string*",
+                            "city": "_:string*",
+                            "state": "_:string*",
+                            "zip": "_:string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_teachers_status": {
+                "operations": {
+                    "powerquery_teachers_status_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.teachers.data.listTeacherStatus"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "teachers": {
+                                        "id": "_:string*",
+                                        "teachernumber": "_:string*",
+                                        "status": "_:string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_custom_agentsourcedids": {
+                "operations": {
+                    "powerquery_custom_agentsourcedids_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.custom.agentsourcedids"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "dcid",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "students": {
+                                        "dcid": "_:string*",
+                                        "agentsourcedids": "_:string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_custom_guardians": {
+                "operations": {
+                    "powerquery_custom_guardians_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.custom.guardians"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "sourcedid",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "person": {
+                                        "sourcedid": "_:string*",
+                                        "orgSourcedids": "_:string*",
+                                        "username": "_:string*",
+                                        "givenname": "_:string*",
+                                        "familyname": "_:string*",
+                                        "email": "_:string*",
+                                        "sms": "_:string*",
+                                        "phone": "_:string*",
+                                        "agentsourcedids": "_:string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_custom_totalk12": {
+                "operations": {
+                    "powerquery_custom_guardians_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.custom.totalk12"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "studentnumber",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "students": {
+                            "studentnumber": "_:string*",
+                            "firstname": "_:string*",
+                            "lastname": "_:string*",
+                            "schoolid": "_:string*",
+                            "grade": "_:string*",
+                            "parentfirstname": "_:string*",
+                            "parentlastname": "_:string*",
+                            "parentstreet": "_:string*",
+                            "parentcity": "_:string*",
+                            "parentstate": "_:string*",
+                            "parentzip": "_:string*",
+                            "parentphonenumber": "_:string*",
+                            "parentemail": "_:string*",
+                            "homeroom": "_:string*",
+                            "gender": "_:string*",
+                            "ethnicity": "_:string*",
+                            "race": "_:string*",
+                            "dob": "_:string*"
+                        }
+                    }
+                }
             }
         }
 		
