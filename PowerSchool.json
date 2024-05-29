@@ -807,13 +807,13 @@
                     }
                 },
                 "parameters": {},
-                "key": "sourcedid",
+                "key": "tables_person_sourcedid",
                 "resources": {
                     "name": "string*",
                     "tables": {
                         "person": {
                                         "sourcedid": "_:string*",
-                                        "orgSourcedids": "_:string*",
+                                        "orgsourcedids": "_:string*",
                                         "username": "_:string*",
                                         "givenname": "_:string*",
                                         "familyname": "_:string*",
