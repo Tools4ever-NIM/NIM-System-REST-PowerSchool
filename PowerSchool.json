@@ -642,6 +642,54 @@
                     }
                 }
             },
+            "powerquery_schoolstaff": {
+                "operations": {
+                    "powerquery_schoolstaff_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.schoolstaff.data.listSchoolStaff"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "schoolstaff": {
+                                        "balance1": "string*",
+                                        "balance2": "string*",
+                                        "balance3": "string*",
+                                        "balance4": "string*",
+                                        "dcid": "string*",
+                                        "id": "string*",
+                                        "sched_buildingcode": "string*",
+                                        "sched_classroom": "string*",
+                                        "sched_department": "string*",
+                                        "sched_gender": "string*",
+                                        "sched_homeroom": "string*",
+                                        "sched_housecode": "string*",
+                                        "sched_isteacherfree": "string*",
+                                        "sched_lunch": "string*",
+                                        "sched_scheduled": "string*",
+                                        "sched_teachermoreoneschool": "string*",
+                                        "sched_team": "string*",
+                                        "sched_usebuilding": "string*",
+                                        "schoolid": "string*",
+                                        "staffstatus": "string*",
+                                        "status": "string*",
+                                        "users_dcid": "string*"
+                        }
+                    }
+                }
+            },
             "powerquery_students_contacts":{
                 "operations":{
                     "powerquery_students_contacts_get":{
@@ -758,6 +806,58 @@
                                         "id": "_:string*",
                                         "teachernumber": "_:string*",
                                         "status": "_:string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_users": {
+                "operations": {
+                    "powerquery_schoolstaff_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.users.data.listusers"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "dcid",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "users": {
+                            "adminldapenabled": "string*",
+                            "canchangeschool": "string*",
+                            "dcid": "string*",
+                            "email_addr": "string*",
+                            "ethnicity": "string*",
+                            "fedethnicity": "string*",
+                            "fedracedecline": "string*",
+                            "first_name": "string*",
+                            "homepage": "string*",
+                            "home_phone": "string*",
+                            "homeroom": "string*",
+                            "homeschoolid": "string*",
+                            "lastfirst": "string*",
+                            "last_name": "string*",
+                            "loginid": "string*",
+                            "lunch_id": "string*",
+                            "middle_name": "string*",
+                            "preferredname": "string*",
+                            "psaccess": "string*",
+                            "ptaccess": "string*",
+                            "school_phone": "string*",
+                            "sif_stateprid": "string*",
+                            "teacherldapenabled": "string*",
+                            "teacherloginid": "string*",
+                            "teachernumber": "string*",
+                            "title": "string*"
                         }
                     }
                 }
