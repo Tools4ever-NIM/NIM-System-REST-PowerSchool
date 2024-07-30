@@ -857,7 +857,9 @@
                             "teacherldapenabled": "string*",
                             "teacherloginid": "string*",
                             "teachernumber": "string*",
-                            "title": "string*"
+                            "title": "string*",
+                            "dob": "string*",
+                            "gender": "string*"
                         }
                     }
                 }
