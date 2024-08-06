@@ -980,6 +980,7 @@
             "get": {
                 "maxPageCount": 5,
                 "query_parameters": {
+                    "start_year": "{start_year}"
                 },
                 "pagination":{
                     "mode":"generic",
@@ -1022,6 +1023,13 @@
                 "type": "textbox",
                 "label": "Page Size:",
                 "value": "100"
+            },
+            {
+                "name": "start_year",
+                "type": "textbox",
+                "label": "School Year",
+                "value": "",
+                "description": "Optional: Choose a specific school year to pull (e.g. \"2018\" would mean 2018-19 school year. Blank means default term)"
             },
             {
                 "name": "student_filter",
