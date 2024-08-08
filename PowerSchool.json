@@ -1012,6 +1012,24 @@
                         "waitTime": 5
                     }
                 },
+				{
+                    "type": "statusCode",
+                    "statusCode": 509,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 10,
+                        "waitTime": 5
+                    }
+                },
+				{
+                    "type": "statusCode",
+                    "statusCode": 500,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 10,
+                        "waitTime": 5
+                    }
+                }
                 {
                     "type": "connectionError"
                 }
