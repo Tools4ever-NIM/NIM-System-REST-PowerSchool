@@ -864,6 +864,359 @@
                     }
                 }
             },
+            "powerquery_table_terms": {
+                "operations": {
+                    "powerquery_tables_terms_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.tables.data.terms"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "terms": {
+                            "abbreviation": "string*",
+                            "attendance_calculation_code": "string*",
+                            "autobuildbin": "string*",
+                            "days_per_cycle": "string*",
+                            "dcid": "string*",
+                            "firstday": "string*",
+                            "id": "string*",
+                            "importmap": "string*",
+                            "lastday": "string*",
+                            "name": "string*",
+                            "noofdays": "string*",
+                            "periods_per_day": "string*",
+                            "portion": "string*",
+                            "schoolid": "string*",
+                            "sterms": "string*",
+                            "suppresspublicview": "string*",
+                            "terminfo_guid": "string*",
+                            "termsinyear": "string*",
+                            "yearid": "string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_table_sections": {
+                "operations": {
+                    "powerquery_tables_sections_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.tables.data.sections"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "sections": {
+                            "attendance_type_code": "string*",
+                            "buildid": "string*",
+                            "comment_value": "string*",
+                            "course_number": "string*",
+                            "dcid": "string*",
+                            "dependent_secs": "string*",
+                            "distuniqueid": "string*",
+                            "excludefromclassrank": "string*",
+                            "excludefromgpa": "string*",
+                            "excludefromhonorroll": "string*",
+                            "excludefromstoredgrades": "string*",
+                            "exclude_ada": "string*",
+                            "exclude_state_rpt_yn": "string*",
+                            "expression": "string*",
+                            "external_expression": "string*",
+                            "fastperlist": "string*",
+                            "gradeprofile": "string*",
+                            "gradescaleid": "string*",
+                            "grade_level": "string*",
+                            "gradebooktype": "string*",
+                            "house": "string*",
+                            "id": "string*",
+                            "instruction_lang": "string*",
+                            "lastattupdate": "string*",
+                            "maxcut": "string*",
+                            "maxenrollment": "string*",
+                            "max_load_status": "string*",
+                            "noofterms": "string*",
+                            "no_of_students": "string*",
+                            "pgflags": "string*",
+                            "pgversion": "string*",
+                            "parent_section_id": "string*",
+                            "programid": "string*",
+                            "room": "string*",
+                            "rostermodser": "string*",
+                            "schedulesectionid": "string*",
+                            "schoolid": "string*",
+                            "sectioninfo_guid": "string*",
+                            "section_number": "string*",
+                            "section_type": "string*",
+                            "sortorder": "string*",
+                            "teacher": "string*",
+                            "teacherdescr": "string*",
+                            "team": "string*",
+                            "termid": "string*",
+                            "trackteacheratt": "string*",
+                            "wheretaught": "string*",
+                            "wheretaughtdistrict": "string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_table_cc": {
+                "operations": {
+                    "powerquery_tables_cc_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.tables.data.cc"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "cc": {
+                            "ab_course_cmp_fun_flg": "string*",
+                            "ab_course_cmp_ext_crd": "string*",
+                            "ab_course_cmp_met_cd": "string*",
+                            "ab_course_eva_pro_cd": "string*",
+                            "ab_course_cmp_sta_cd": "string*",
+                            "attendance": "string*",
+                            "attendance_type_code": "string*",
+                            "log": "string*",
+                            "course_number": "string*",
+                            "currentabsences": "string*",
+                            "currenttardies": "string*",
+                            "dateenrolled": "string*",
+                            "dateleft": "string*",
+                            "dcid": "string*",
+                            "expression": "string*",
+                            "firstattdate": "string*",
+                            "id": "string*",
+                            "lastattmod": "string*",
+                            "lastgradeupdate": "string*",
+                            "origsectionid": "string*",
+                            "period_obsolete": "string*",
+                            "schoolid": "string*",
+                            "sectionid": "string*",
+                            "section_number": "string*",
+                            "studyear": "string*",
+                            "studentid": "string*",
+                            "studentsectenrl_guid": "string*",
+                            "teachercomment": "string*",
+                            "teacherid": "string*",
+                            "teacherprivatenote": "string*",
+                            "termid": "string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_table_sectionteacher": {
+                "operations": {
+                    "powerquery_tables_sectionteacher_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.tables.data.sectionteacher"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "sectionteacher": {
+                            "end_date": "string*",
+                            "id": "string*",
+                            "notes": "string*",
+                            "priorityorder": "string*",
+                            "roleid": "string*",
+                            "sectionid": "string*",
+                            "start_date": "string*",
+                            "teacherid": "string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_table_students": {
+                "operations": {
+                    "powerquery_tables_students_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.tables.data.students"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "students": {
+                            "alert_discipline": "string*",
+                            "alert_disciplineexpires": "string*",
+                            "alert_guardian": "string*",
+                            "alert_guardianexpires": "string*",
+                            "alert_medical": "string*",
+                            "alert_medicalexpires": "string*",
+                            "alert_other": "string*",
+                            "alert_otherexpires": "string*",
+                            "allowwebaccess": "string*",
+                            "balance1": "string*",
+                            "balance2": "string*",
+                            "balance3": "string*",
+                            "bus_route": "string*",
+                            "bus_stop": "string*",
+                            "city": "string*",
+                            "classof": "string*",
+                            "cumulative_pct": "string*",
+                            "dcid": "string*",
+                            "districtentrydate": "string*",
+                            "districtofresidence": "string*",
+                            "dob": "string*",
+                            "doctor_name": "string*",
+                            "doctor_phone": "string*",
+                            "emerg_contact_1": "string*",
+                            "emerg_contact_2": "string*",
+                            "emerg_phone_1": "string*",
+                            "emerg_phone_2": "string*",
+                            "enroll_status": "string*",
+                            "enrollment_schoolid": "string*",
+                            "enrollment_transfer_date_pend": "string*",
+                            "enrollmentcode": "string*",
+                            "enrollmentid": "string*",
+                            "enrollmenttype": "string*",
+                            "entrycode": "string*",
+                            "entrydate": "string*",
+                            "ethnicity": "string*",
+                            "exclude_fr_rank": "string*",
+                            "exitcode": "string*",
+                            "exitcomment": "string*",
+                            "exitdate": "string*",
+                            "father": "string*",
+                            "father_studentcont_guid": "string*",
+                            "fedethnicity": "string*",
+                            "fedracedecline": "string*",
+                            "fee_exemption_status": "string*",
+                            "first_name": "string*",
+                            "fteid": "string*",
+                            "gender": "string*",
+                            "geocode": "string*",
+                            "gpentryyear": "string*",
+                            "grade_level": "string*",
+                            "gradreqsetid": "string*",
+                            "graduated_rank": "string*",
+                            "graduated_schoolid": "string*",
+                            "graduated_schoolname": "string*",
+                            "guardian_studentcont_guid": "string*",
+                            "guardianemail": "string*",
+                            "guardianfax": "string*",
+                            "home_phone": "string*",
+                            "house": "string*",
+                            "id": "string*",
+                            "last_name": "string*",
+                            "lastfirst": "string*",
+                            "lastmeal": "string*",
+                            "ldapenabled": "string*",
+                            "log": "string*",
+                            "lunch_id": "string*",
+                            "lunchstatus": "string*",
+                            "mailing_city": "string*",
+                            "mailing_geocode": "string*",
+                            "mailing_state": "string*",
+                            "mailing_street": "string*",
+                            "mailing_zip": "string*",
+                            "membershipshare": "string*",
+                            "middle_name": "string*",
+                            "mother": "string*",
+                            "mother_studentcont_guid": "string*",
+                            "next_school": "string*",
+                            "person_id": "string*",
+                            "phone_id": "string*",
+                            "photoflag": "string*",
+                            "pl_language": "string*",
+                            "sched_loadlock": "string*",
+                            "sched_lockstudentschedule": "string*",
+                            "sched_nextyearbuilding": "string*",
+                            "sched_nextyeargrade": "string*",
+                            "sched_nextyearhouse": "string*",
+                            "sched_nextyearteam": "string*",
+                            "sched_priority": "string*",
+                            "sched_scheduled": "string*",
+                            "sched_yearofgraduation": "string*",
+                            "schoolentrydate": "string*",
+                            "schoolentrygradelevel": "string*",
+                            "schoolid": "string*",
+                            "simple_gpa": "string*",
+                            "simple_pct": "string*",
+                            "ssn": "string*",
+                            "state": "string*",
+                            "state_enrollflag": "string*",
+                            "state_excludefromreporting": "string*",
+                            "state_studentnumber": "string*",
+                            "street": "string*",
+                            "student_allowwebaccess": "string*",
+                            "student_number": "string*",
+                            "student_web_id": "string*",
+                            "student_web_password": "string*",
+                            "studentschlenrl_guid": "string*",
+                            "summerschoolid": "string*",
+                            "summerschoolnote": "string*",
+                            "team": "string*",
+                            "track": "string*",
+                            "transfercomment": "string*",
+                            "tuitionpayer": "string*",
+                            "web_id": "string*",
+                            "web_password": "string*",
+                            "withdrawal_reason_code": "string*",
+                            "zip": "string*"
+                        }
+                    }
+                }
+            },
             "powerquery_custom_agentsourcedids": {
                 "operations": {
                     "powerquery_custom_agentsourcedids_get": {
