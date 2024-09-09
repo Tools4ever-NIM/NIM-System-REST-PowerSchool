@@ -1029,7 +1029,7 @@
                         "maxCount": 10,
                         "waitTime": 5
                     }
-                }
+                },
                 {
                     "type": "connectionError"
                 }
