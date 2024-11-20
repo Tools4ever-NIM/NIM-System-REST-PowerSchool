@@ -337,7 +337,7 @@
                         "method": "get",
                         "call": {
                             "mode": "iteration",
-                            "table": "schools",
+                            "table": "powerquery_table_schools",
                             "iterator": "id",
                             "path": "/ws/v1/school/{iterator}/staff",
                             "base": {
@@ -360,6 +360,7 @@
                     "id": "number*",
                     "local_id": "string*",
                     "users_dcid": "string*",
+                    "school_id": "string*",
                     "admin_username": "string",
                     "teacher_username": "string",
                     "teacher_global_id": "string*",
@@ -413,8 +414,8 @@
                         },                        
                         "maxPageCount": -1,
                         "maxSessionCount": 10,
-                        "query_parameters": {}
-
+                        "query_parameters": {
+						}
                     }
                 },
                 "parameters":{},
@@ -445,8 +446,10 @@
                         "processing_options": {
                             "output_field": "sections.section"
                         },
+                        "query_parameters" :{
+                            "q": "{section_filter}"
+                        },
                         "maxSessionCount": 20
-
                     }
                 },
                 "parameters":{},
@@ -477,8 +480,9 @@
                         "processing_options": {
                             "output_field": "courses.course"
                         },
+                        "query_parameters" :{
+                        },
                         "maxSessionCount": 20
-
                     }
                 },
                 "parameters":{},
@@ -505,8 +509,10 @@
                         "processing_options": {
                             "output_field": "terms.term"
                         },
+                        "query_parameters" :{
+                            "q": "{term_filter}"
+                        },
                         "maxSessionCount": 20
-
                     }
                 },
                 "parameters":{},
@@ -1217,6 +1223,99 @@
                     }
                 }
             },
+            "powerquery_table_districtcalendar": {
+                "operations": {
+                    "powerquery_tables_districtcalendar_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.tables.data.districtcalendar"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "name": "string*",
+                    "tables": {
+                        "districtcalendar": {
+                            "calendarname": "string*",
+                            "calendaryear": "string*",
+                            "enddate": "string*",
+                            "id": "string*",
+                            "startdate": "string*"
+                        }
+                    }
+                }
+            },
+            "powerquery_table_schools": {
+                "operations": {
+                    "powerquery_tables_schools_get": {
+                        "method": "get",
+                        "verb": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/query/com.tools4ever.tables.data.schools"
+                        },
+                        "body": {},
+                        "processing_options": {
+                            "output_field": "record"
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "id",
+                "resources": {
+                    "tables": {
+                        "schools": {
+                            "abbreviation": "string*",
+                            "activecrslist": "string*",
+                            "address": "string*",
+                            "alternate_school_number": "string*",
+                            "asstprincipalemail": "string*",
+                            "asstprincipalphone": "string*",
+                            "bulletinemail": "string*",
+                            "countyname": "string*",
+                            "countynbr": "string*",
+                            "dcid": "string*",
+                            "dfltnextschool": "string*",
+                            "fee_exemption_status": "string*",
+                            "high_grade": "string*",
+                            "hist_high_grade": "string*",
+                            "hist_low_grade": "string*",
+                            "issummerschool": "string*",
+                            "low_grade": "string*",
+                            "strict' name": "string*",
+                            "principal": "string*",
+                            "principalemail": "string*",
+                            "principalphone": "string*",
+                            "pscomm_path": "string*",
+                            "schedulewhichschool": "string*",
+                            "schooladdress": "string*",
+                            "schoolcategorycodesetid": "string*",
+                            "schoolcity": "string*",
+                            "schoolfax": "string*",
+                            "schoolgroup": "string*",
+                            "schoolphone": "string*",
+                            "schoolstate": "string*",
+                            "schoolzip": "string*",
+                            "school_number": "string*",
+                            "sortorder": "string*",
+                            "sif_stateprid": "string*",
+                            "state_excludefromreporting": "string*",
+                            "sysemailfrom": "string*",
+                            "tchrlogentrto": "string*"
+                        }
+                    }
+                }
+            },
             "powerquery_custom_agentsourcedids": {
                 "operations": {
                     "powerquery_custom_agentsourcedids_get": {
@@ -1380,7 +1479,19 @@
                 "name": "student_filter",
                 "type": "textbox",
                 "label": "Student Filter:",
-                "value": "name.last_name==*;school_enrollment.enroll_status_code==(0)"
+                "value": "name.last_name==*;school_enrollment.enroll_status_code==(0);"
+            },
+            {
+                "name": "term_filter",
+                "type": "textbox",
+                "label": "Term Filter:",
+                "value": "start_year==2024;"
+            },
+            {
+                "name": "section_filter",
+                "type": "textbox",
+                "label": "Section Filter:",
+                "value": "term.start_year==2024;"
             },
             {
                 "name": "student_expansions",
