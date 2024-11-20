@@ -414,8 +414,8 @@
                         },                        
                         "maxPageCount": -1,
                         "maxSessionCount": 10,
-                        "query_parameters": {}
-
+                        "query_parameters": {
+						}
                     }
                 },
                 "parameters":{},
@@ -446,8 +446,10 @@
                         "processing_options": {
                             "output_field": "sections.section"
                         },
+                        "query_parameters" :{
+                            "q": "{section_filter}"
+                        },
                         "maxSessionCount": 20
-
                     }
                 },
                 "parameters":{},
@@ -478,8 +480,9 @@
                         "processing_options": {
                             "output_field": "courses.course"
                         },
+                        "query_parameters" :{
+                        },
                         "maxSessionCount": 20
-
                     }
                 },
                 "parameters":{},
@@ -506,8 +509,10 @@
                         "processing_options": {
                             "output_field": "terms.term"
                         },
+                        "query_parameters" :{
+                            "q": "{term_filter}"
+                        },
                         "maxSessionCount": 20
-
                     }
                 },
                 "parameters":{},
@@ -1474,7 +1479,19 @@
                 "name": "student_filter",
                 "type": "textbox",
                 "label": "Student Filter:",
-                "value": "name.last_name==*;school_enrollment.enroll_status_code==(0)"
+                "value": "name.last_name==*;school_enrollment.enroll_status_code==(0);"
+            },
+            {
+                "name": "term_filter",
+                "type": "textbox",
+                "label": "Term Filter:",
+                "value": "start_year==2024;"
+            },
+            {
+                "name": "section_filter",
+                "type": "textbox",
+                "label": "Section Filter:",
+                "value": "term.start_year==2024;"
             },
             {
                 "name": "student_expansions",
