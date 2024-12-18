@@ -338,7 +338,7 @@
                         "call": {
                             "mode": "iteration",
                             "table": "powerquery_table_schools",
-                            "iterator": "id",
+                            "iterator": "dcid",
                             "path": "/ws/v1/school/{iterator}/staff",
                             "base": {
                                 "school_id": "{iterator}"
