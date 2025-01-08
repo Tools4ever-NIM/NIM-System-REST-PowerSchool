@@ -1,6 +1,5 @@
 {
     "schema": {
-        "options": {},
         "crud_objects": {
             "config_students":{
                 "operations":{
@@ -11,12 +10,9 @@
                         },
                         "processing_options": {
                             "output_field": "students"
-                        },
-                        "query_parameters": {
                         }
                     }
                 },
-                "parameters":{},
                 "key":"@extensions",
                 "resources":{
                     "@extensions": "number*",
@@ -32,12 +28,9 @@
                         },
                         "processing_options": {
                             "output_field": "staffs"
-                        },
-                        "query_parameters": {
                         }
                     }
                 },
-                "parameters":{},
                 "key":"@extensions",
                 "resources":{
                     "@extensions": "number*",
@@ -49,15 +42,18 @@
                     "students_get":{
                         "method":"get",
                         "call": {
-                            "path": "/ws/v1/district/student"
-                        },
-                        "processing_options": {
-                            "output_field": "students.student"
-                        },
-                        "query_parameters": {
+                            "path": "/ws/v1/district/student",
+                            "queryParameters": {
                                 "q": "{student_filter}",
                                 "extensions": "{student_extensions}",
                                 "expansions": "{student_expansions}"
+                            },
+                            "queryParametersConfig": {
+                                "doNotSendIfEmpty": true
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": "students.student"
                         }
                     },
                     "student_update": {
@@ -79,7 +75,6 @@
                         "semantics": "update"
                     }
                 },
-                "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
@@ -243,12 +238,9 @@
                         },
                         "processing_options": {
                             "output_field": "schools.school"
-                        },
-                        "query_parameters": {
                         }
                     }
                 },
-                "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
@@ -342,19 +334,22 @@
                             "path": "/ws/v1/school/{iterator}/staff",
                             "base": {
                                 "school_id": "{iterator}"
+                            },
+                            "queryParameters": {
+                                "expansions": "{staff_expansions}",
+                                "extensions": "{staff_extensions}"
+                            },
+                            "queryParametersConfig": {
+                                "doNotSendIfEmpty": true
                             }
                         },
                         "processing_options": {
                             "output_field": "staffs.staff"
                         },
-                        "query_parameters": {
-                            "expansions": "{staff_expansions}",
-                            "extensions": "{staff_extensions}"
-                        },
+                        
                         "maxSessionCount": 20
                     }
                 },
-                "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
@@ -413,12 +408,9 @@
                             "output_field": "section_enrollments.section_enrollment"
                         },                        
                         "maxPageCount": -1,
-                        "maxSessionCount": 10,
-                        "query_parameters": {
-						}
+                        "maxSessionCount": 10
                     }
                 },
-                "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
@@ -441,18 +433,20 @@
                             "post_processing": "child_tables",
                             "base": {
                                 "school_id": "{iterator}"
+                            },
+                            "queryParameters" :{
+                                "q": "{section_filter}"
+                            },
+                            "queryParametersConfig": {
+                                "doNotSendIfEmpty": true
                             }
                         },
                         "processing_options": {
                             "output_field": "sections.section"
                         },
-                        "query_parameters" :{
-                            "q": "{section_filter}"
-                        },
                         "maxSessionCount": 20
                     }
                 },
-                "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
@@ -480,12 +474,9 @@
                         "processing_options": {
                             "output_field": "courses.course"
                         },
-                        "query_parameters" :{
-                        },
                         "maxSessionCount": 20
                     }
                 },
-                "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
@@ -504,18 +495,20 @@
                             "path": "/ws/v1/school/{iterator}/term",
                             "base": {
                                 "school_id": "{iterator}"
+                            },
+                            "queryParameters" :{
+                                "q": "{term_filter}"
+                            },
+                            "queryParametersConfig": {
+                                "doNotSendIfEmpty": true
                             }
                         },
                         "processing_options": {
                             "output_field": "terms.term"
                         },
-                        "query_parameters" :{
-                            "q": "{term_filter}"
-                        },
                         "maxSessionCount": 20
                     }
                 },
-                "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
@@ -540,12 +533,9 @@
                         "body":{ },
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {
                         }
                     }
                 },
-                "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
@@ -584,11 +574,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "id": "number*",
@@ -631,11 +619,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "name": "string*",
@@ -660,11 +646,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "name": "string*",
@@ -708,12 +692,9 @@
                         "body":{ },
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {
                         }
                     }
                 },
-                "parameters":{},
                 "key":"id",
                 "resources":{
                     "id": "number*",
@@ -752,11 +733,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "id": "number*",
@@ -799,11 +778,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "name": "string*",
@@ -828,11 +805,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "dcid",
                 "resources": {
                     "name": "string*",
@@ -882,11 +857,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "name": "string*",
@@ -927,11 +900,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "name": "string*",
@@ -1001,11 +972,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "name": "string*",
@@ -1058,11 +1027,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "name": "string*",
@@ -1092,11 +1059,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "name": "string*",
@@ -1235,11 +1200,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "name": "string*",
@@ -1266,11 +1229,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "id",
                 "resources": {
                     "tables": {
@@ -1328,11 +1289,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "dcid",
                 "resources": {
                     "name": "string*",
@@ -1356,11 +1315,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "tables_person_sourcedid",
                 "resources": {
                     "name": "string*",
@@ -1391,11 +1348,9 @@
                         "body": {},
                         "processing_options": {
                             "output_field": "record"
-                        },
-                        "query_parameters": {}
+                        }
                     }
                 },
-                "parameters": {},
                 "key": "studentnumber",
                 "resources": {
                     "name": "string*",
@@ -1431,11 +1386,8 @@
             "baseUrl": "https://{tenant_id}",
             "get": {
                 "maxPageCount": 5,
-                "query_parameters": {
-                },
                 "pagination":{
                     "mode":"generic",
-                    "path":[],
                     "params":{
                         "page":"{page_number}",
                         "pagesize":"{page_size}"
@@ -1463,8 +1415,8 @@
             ]
         },
         "authOptions": {
-            "authUrl": "https://{tenant_id}/oauth/access_token",
-            "directToken":true
+            "type": "client-credentials",
+            "authUrl": "https://{tenant_id}/oauth/access_token"
         }
     },
     "connection":{
@@ -1473,49 +1425,65 @@
                 "name": "page_size",
                 "type": "textbox",
                 "label": "Page Size:",
-                "value": "100"
+                "value": "100",
+                "tooltip": "Size of the response back from the API. Controlled in the plugin configuration in PowerSchool (max: 1000)",
+                "order": 301
             },
             {
                 "name": "student_filter",
                 "type": "textbox",
                 "label": "Student Filter:",
-                "value": "name.last_name==*;school_enrollment.enroll_status_code==(0);"
+                "value": "name.last_name==*;school_enrollment.enroll_status_code==(0);",
+                "tooltip": "Define a request filter for the Student table",
+                "order": 302
             },
             {
                 "name": "term_filter",
                 "type": "textbox",
                 "label": "Term Filter:",
-                "value": "start_year==2024;"
+                "value": "start_year==2024;",
+                "tooltip": "Define a request filter for the Terms table. (e.g. start_year==2024;)",
+                "order": 308
             },
             {
                 "name": "section_filter",
                 "type": "textbox",
                 "label": "Section Filter:",
-                "value": "term.start_year==2024;"
+                "value": "term.start_year==2024;",
+                "tooltip": "Define a request filter for the Sections table. (e.g. term.start_year==2024;)",
+                "order": 307
             },
             {
                 "name": "student_expansions",
                 "type": "textbox",
                 "label": "Student Expansions",
-                "value": "addresses,alerts,contact,contact_info,demographics,ethnicity_race,initial_enrollment,lunch,name,phones,schedule_setup,school_enrollment"
+                "value": "addresses,alerts,contact,contact_info,demographics,ethnicity_race,initial_enrollment,lunch,name,phones,schedule_setup,school_enrollment",
+                "tooltip": "Request expansions for the student table. Refer to the config_students table for possible values. Values should be comma delimited with no spaces",
+                "order": 303
             },
             {
                 "name": "student_extensions",
                 "type": "textbox",
                 "label": "Student Extensions",
-                "value": "u_students_extension,studentcorefields"
+                "value": "u_students_extension,studentcorefields",
+                "tooltip": "Request extensions for the student table. Refer to the config_students table for possible values. Values should be comma delimited with no spaces",
+                "order": 304
             },
             {
                 "name": "staff_expansions",
                 "type": "textbox",
                 "label": "Staff Expansions",
-                "value": "addresses,emails,phones,school_affiliations,school_counselors,teacher_global_id,staff_global_id"
+                "value": "addresses,emails,phones,school_affiliations,school_counselors,teacher_global_id,staff_global_id",
+                "tooltip": "Request expansions for the staff table. Refer to the config_staff table for possible values. Values should be comma delimited with no spaces",
+                "order": 305
             },
             {
                 "name": "staff_extensions",
                 "type": "textbox",
                 "label": "Staff Extensions",
-                "value": "s_ssf_ncea_x"
+                "value": "s_ssf_ncea_x",
+                "tooltip": "Request extensions for the staff table. Refer to the config_staff table for possible values. Values should be comma delimited with no spaces",
+                "order": 306
             }
         ]
     }
