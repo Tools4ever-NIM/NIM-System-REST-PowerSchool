@@ -1430,28 +1430,27 @@
                 "order": 301
             },
             {
+                "type": "text",
+                "name": "header_connection",
+                "label": "     ",
+                "text": "",
+                "order": 301
+            },
+            {
+                "type": "text",
+                "name": "header_student",
+                "label": "Student Options",
+                "text": "",
+                "order": 302
+            },
+            {
                 "name": "student_filter",
                 "type": "textbox",
                 "label": "Student Filter:",
                 "value": "name.last_name==*;school_enrollment.enroll_status_code==(0);",
                 "tooltip": "Define a request filter for the Student table",
-                "order": 302
-            },
-            {
-                "name": "term_filter",
-                "type": "textbox",
-                "label": "Term Filter:",
-                "value": "start_year==2024;",
-                "tooltip": "Define a request filter for the Terms table. (e.g. start_year==2024;)",
-                "order": 308
-            },
-            {
-                "name": "section_filter",
-                "type": "textbox",
-                "label": "Section Filter:",
-                "value": "term.start_year==2024;",
-                "tooltip": "Define a request filter for the Sections table. (e.g. term.start_year==2024;)",
-                "order": 307
+                "order": 302,
+                "label_indent": true
             },
             {
                 "name": "student_expansions",
@@ -1459,7 +1458,8 @@
                 "label": "Student Expansions",
                 "value": "addresses,alerts,contact,contact_info,demographics,ethnicity_race,initial_enrollment,lunch,name,phones,schedule_setup,school_enrollment",
                 "tooltip": "Request expansions for the student table. Refer to the config_students table for possible values. Values should be comma delimited with no spaces",
-                "order": 303
+                "order": 303,
+                "label_indent": true
             },
             {
                 "name": "student_extensions",
@@ -1467,7 +1467,15 @@
                 "label": "Student Extensions",
                 "value": "u_students_extension,studentcorefields",
                 "tooltip": "Request extensions for the student table. Refer to the config_students table for possible values. Values should be comma delimited with no spaces",
-                "order": 304
+                "order": 304,
+                "label_indent": true
+            },
+            {
+                "type": "text",
+                "name": "header_staff",
+                "label": "Staff Options",
+                "text": "",
+                "order": 305
             },
             {
                 "name": "staff_expansions",
@@ -1475,7 +1483,8 @@
                 "label": "Staff Expansions",
                 "value": "addresses,emails,phones,school_affiliations,school_counselors,teacher_global_id,staff_global_id",
                 "tooltip": "Request expansions for the staff table. Refer to the config_staff table for possible values. Values should be comma delimited with no spaces",
-                "order": 305
+                "order": 305,
+                "label_indent": true
             },
             {
                 "name": "staff_extensions",
@@ -1483,7 +1492,33 @@
                 "label": "Staff Extensions",
                 "value": "s_ssf_ncea_x",
                 "tooltip": "Request extensions for the staff table. Refer to the config_staff table for possible values. Values should be comma delimited with no spaces",
-                "order": 306
+                "order": 306,
+                "label_indent": true
+            },
+            {
+                "type": "text",
+                "name": "header_courses",
+                "label": "Course Options",
+                "text": "",
+                "order": 307
+            },
+            {
+                "name": "section_filter",
+                "type": "textbox",
+                "label": "Section Filter:",
+                "value": "term.start_year==2024;",
+                "tooltip": "Define a request filter for the Sections table. (e.g. term.start_year==2024;)",
+                "order": 307,
+                "label_indent": true
+            },
+            {
+                "name": "term_filter",
+                "type": "textbox",
+                "label": "Term Filter:",
+                "value": "start_year==2024;",
+                "tooltip": "Define a request filter for the Terms table. (e.g. start_year==2024;)",
+                "order": 308,
+                "label_indent": true
             }
         ]
     }
