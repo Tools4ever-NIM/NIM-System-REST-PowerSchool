@@ -1,5 +1,4 @@
 {
-    "$schema": "rest-connector.json",
     "schema": {
         "crud_objects": {
             "config_students":{
