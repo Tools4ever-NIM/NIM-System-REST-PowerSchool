@@ -1,4 +1,5 @@
 {
+    "$schema": "rest-connector.json",
     "schema": {
         "crud_objects": {
             "config_students":{
@@ -1426,7 +1427,7 @@
                 "type": "textbox",
                 "label": "Page Size:",
                 "value": "100",
-                "tooltip": "Size of the response back from the API. Controlled in the plugin configuration in PowerSchool (max: 1000)",
+                "tooltip": "Size of each response back from the API. By default, when the plugin is installed it will default to 100. You can configure this in PowerSchool to a maximum of 1000",
                 "order": 301
             },
             {
@@ -1448,7 +1449,7 @@
                 "type": "textbox",
                 "label": "Student Filter:",
                 "value": "name.last_name==*;school_enrollment.enroll_status_code==(0);",
-                "tooltip": "Define a request filter for the Student table",
+                "tooltip": "Optional, Define a request filter for the Student table",
                 "order": 302,
                 "label_indent": true
             },
@@ -1457,7 +1458,7 @@
                 "type": "textbox",
                 "label": "Student Expansions",
                 "value": "addresses,alerts,contact,contact_info,demographics,ethnicity_race,initial_enrollment,lunch,name,phones,schedule_setup,school_enrollment",
-                "tooltip": "Request expansions for the student table. Refer to the config_students table for possible values. Values should be comma delimited with no spaces",
+                "tooltip": "Optional, Request expansions for the student table. Refer to the config_students table for possible values. Values should be comma delimited with no spaces",
                 "order": 303,
                 "label_indent": true
             },
@@ -1466,7 +1467,7 @@
                 "type": "textbox",
                 "label": "Student Extensions",
                 "value": "u_students_extension,studentcorefields",
-                "tooltip": "Request extensions for the student table. Refer to the config_students table for possible values. Values should be comma delimited with no spaces",
+                "tooltip": "Optional, Request extensions for the student table. Refer to the config_students table for possible values. Values should be comma delimited with no spaces",
                 "order": 304,
                 "label_indent": true
             },
@@ -1482,7 +1483,7 @@
                 "type": "textbox",
                 "label": "Staff Expansions",
                 "value": "addresses,emails,phones,school_affiliations,school_counselors,teacher_global_id,staff_global_id",
-                "tooltip": "Request expansions for the staff table. Refer to the config_staff table for possible values. Values should be comma delimited with no spaces",
+                "tooltip": "Optional, Request expansions for the staff table. Refer to the config_staff table for possible values. Values should be comma delimited with no spaces",
                 "order": 305,
                 "label_indent": true
             },
@@ -1491,7 +1492,7 @@
                 "type": "textbox",
                 "label": "Staff Extensions",
                 "value": "s_ssf_ncea_x",
-                "tooltip": "Request extensions for the staff table. Refer to the config_staff table for possible values. Values should be comma delimited with no spaces",
+                "tooltip": "Optional, Request extensions for the staff table. Refer to the config_staff table for possible values. Values should be comma delimited with no spaces",
                 "order": 306,
                 "label_indent": true
             },
@@ -1507,7 +1508,7 @@
                 "type": "textbox",
                 "label": "Section Filter:",
                 "value": "term.start_year==2024;",
-                "tooltip": "Define a request filter for the Sections table. (e.g. term.start_year==2024;)",
+                "tooltip": "Optional, Define a request filter for the Sections table. (e.g. term.start_year==2024;)",
                 "order": 307,
                 "label_indent": true
             },
@@ -1516,7 +1517,7 @@
                 "type": "textbox",
                 "label": "Term Filter:",
                 "value": "start_year==2024;",
-                "tooltip": "Define a request filter for the Terms table. (e.g. start_year==2024;)",
+                "tooltip": "Optional, Define a request filter for the Terms table. (e.g. start_year==2024;)",
                 "order": 308,
                 "label_indent": true
             }
