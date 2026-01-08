@@ -1450,7 +1450,52 @@
 			"retry": [
                 {
                     "type": "statusCode",
+                    "statusCode": 0,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 10,
+                        "waitTime": 5
+                    }
+                },
+                {
+                    "type": "statusCode",
                     "statusCode": 504,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 10,
+                        "waitTime": 5
+                    }
+                },
+                {
+                    "type": "statusCode",
+                    "statusCode": 429,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 10,
+                        "waitTime": 6
+                    }
+                },
+                {
+                    "type": "statusCode",
+                    "statusCode": 500,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 10,
+                        "waitTime": 5
+                    }
+                },
+                {
+                    "type": "statusCode",
+                    "statusCode": 502,
+                    "retry": {
+                        "type": "simple",
+                        "maxCount": 10,
+                        "waitTime": 5
+                    }
+                },
+                {
+                    "type": "statusCode",
+                    "statusCode": 503,
                     "retry": {
                         "type": "simple",
                         "maxCount": 10,
