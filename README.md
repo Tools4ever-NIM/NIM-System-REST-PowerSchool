@@ -12,6 +12,8 @@
 - Students
 - Schools
 - Terms
+- Schema Areas
+- Schema Tables
 
 
 # Actions
