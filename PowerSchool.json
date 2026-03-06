@@ -1446,7 +1446,7 @@
                             "mode": "normal",
                             "path": "/ws/schema/table/{name}"
                         },
-                        "removeBlankFields": false,
+                        "removeBlankFields": true,
                         "body":{
                             "_nim_merge_attributes_": false,
                             "name": "{name}",
@@ -1481,7 +1481,7 @@
                             "mode": "normal",
                             "path": "/ws/schema/table/{name}/{primaryKeyValue}"
                         },
-                        "removeBlankFields": false,
+                        "removeBlankFields": true,
                         "body":{
                             "_nim_merge_attributes_": false,
                             "name": "{name}",
@@ -1519,7 +1519,25 @@
                     "primaryKey": "string*",
                     "primaryKeyValue": "string",
                     "field01Name": "string",
-                    "field01Value": "string"
+                    "field01Value": "string",
+                    "field02Name": "string",
+                    "field02Value": "string",
+                    "field03Name": "string",
+                    "field03Value": "string",
+                    "field04Name": "string",
+                    "field04Value": "string",
+                    "field05Name": "string",
+                    "field05Value": "string",
+                    "field06Name": "string",
+                    "field06Value": "string",
+                    "field07Name": "string",
+                    "field07Value": "string",
+                    "field08Name": "string",
+                    "field08Value": "string",
+                    "field09Name": "string",
+                    "field09Value": "string",
+                    "field10Name": "string",
+                    "field10Value": "string"
                 }
             }
         }
