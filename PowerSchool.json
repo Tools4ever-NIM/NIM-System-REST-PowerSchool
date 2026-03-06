@@ -1439,12 +1439,87 @@
                         "processing_options": {
                             "output_field": "tables"
                         }
+                    },
+                    "schema_create_record": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/table/{name}"
+                        },
+                        "removeBlankFields": false,
+                        "body":{
+                            "_nim_merge_attributes_": false,
+                            "name": "{name}",
+                            "tables": {
+                                "{name}": {
+                                    "{primaryKey}": "{primaryKeyValue}",
+                                    "{field01Name}": "{field01Value}",
+                                    "{field02Name}": "{field02Value}",
+                                    "{field03Name}": "{field03Value}",
+                                    "{field04Name}": "{field04Value}",
+                                    "{field05Name}": "{field05Value}",
+                                    "{field06Name}": "{field06Value}",
+                                    "{field07Name}": "{field07Value}",
+                                    "{field08Name}": "{field08Value}",
+                                    "{field09Name}": "{field09Value}",
+                                    "{field10Name}": "{field10Value}"
+                                }
+                            }
+                        },
+                        "resource_allowance_default": "optional",
+                        "resource_mandatory": [
+                            "name",
+                            "primaryKey",
+                            "primaryKeyValue",
+                            "field01Name",
+                            "field01Value"
+                        ]
+                    },
+                    "schema_update_record": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/ws/schema/table/{name}/{primaryKeyValue}"
+                        },
+                        "removeBlankFields": false,
+                        "body":{
+                            "_nim_merge_attributes_": false,
+                            "name": "{name}",
+                            "tables": {
+                                "{name}": {
+                                    "{field01Name}": "{field01Value}",
+                                    "{field02Name}": "{field02Value}",
+                                    "{field03Name}": "{field03Value}",
+                                    "{field04Name}": "{field04Value}",
+                                    "{field05Name}": "{field05Value}",
+                                    "{field06Name}": "{field06Value}",
+                                    "{field07Name}": "{field07Value}",
+                                    "{field08Name}": "{field08Value}",
+                                    "{field09Name}": "{field09Value}",
+                                    "{field10Name}": "{field10Value}"
+                                }
+                            }
+                        },
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "primaryKey"
+
+                        ],
+                        "resource_mandatory": [
+                            "name",
+                            "primaryKeyValue",
+                            "field01Name",
+                            "field01Value"
+                        ]
                     }
                 },
                 "key":"name",
                 "resources":{
                     "name": "string*",
-                    "primaryKey": "string*"
+                    "primaryKey": "string*",
+                    "primaryKeyValue": "string",
+                    "field01Name": "string",
+                    "field01Value": "string"
                 }
             }
         }
